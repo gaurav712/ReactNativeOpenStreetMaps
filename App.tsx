@@ -117,6 +117,7 @@ const App = () => {
           const {data} = event.nativeEvent;
           processMessagesFromWebView(data);
         }}
+        startInLoadingState={true}
       />
       <View style={styles.inputContainer}>
         <TextInput
