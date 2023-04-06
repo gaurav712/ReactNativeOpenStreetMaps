@@ -5,6 +5,7 @@ import {
   TouchableOpacity,
   Text,
   TextInput,
+  StatusBar,
 } from 'react-native';
 import WebView from 'react-native-webview';
 
@@ -106,6 +107,11 @@ const App = () => {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        translucent={true}
+        backgroundColor={'#eeeeeecc'}
+        barStyle={'dark-content'}
+      />
       <WebView
         ref={webViewRef as LegacyRef<any>}
         style={styles.webview}
