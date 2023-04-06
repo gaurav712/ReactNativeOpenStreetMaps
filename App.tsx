@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, LegacyRef} from 'react';
 import {
   StyleSheet,
   View,
@@ -20,6 +20,7 @@ const App = () => {
     }
 
     if (webViewRef.current) {
+      // @ts-ignore
       webViewRef.current.postMessage(`${routeFrom}:${routeTo}`);
     }
   };
@@ -106,7 +107,7 @@ const App = () => {
   return (
     <View style={styles.container}>
       <WebView
-        ref={webViewRef}
+        ref={webViewRef as LegacyRef<any>}
         style={styles.webview}
         source={{uri: 'https://www.openstreetmap.org'}}
         javaScriptEnabled={true}
